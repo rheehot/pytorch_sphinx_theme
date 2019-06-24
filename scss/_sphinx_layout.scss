@@ -713,3 +713,25 @@
     }
   }
 }
+
+.github-ribbon {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 999;
+
+  .ribbon-img {
+    width: 80px;
+    height: 80px;
+
+    @include small-desktop {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include desktop {
+      width: 149px;
+      height: 149px;
+    }
+  }
+}
