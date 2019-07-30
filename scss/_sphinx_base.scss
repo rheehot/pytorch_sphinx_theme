@@ -290,7 +290,7 @@ article.pytorch-article .sphx-glr-thumbcontainer {
       font-size: rem(16px);
       color: $not_quite_black;
       letter-spacing: 0;
-      line-height: rem(24px);
+      line-height: rem(22px);
       text-decoration: none;
     }
   }
@@ -322,6 +322,7 @@ article.pytorch-article .sphx-glr-thumbcontainer {
 
   .figure a.reference.internal {
     text-align: left;
+    margin-top: 5px;
   }
 
   @include animated_border_hover_state;
