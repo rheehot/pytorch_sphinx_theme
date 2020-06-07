@@ -78,6 +78,8 @@
 
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+
+  {% include "fonts.html" %}
 </head>
 
 <a class="github-ribbon" href="https://github.com/9bow/PyTorch-tutorials-kr">
@@ -96,11 +98,25 @@
           </li>
 
           <li>
-            <a href="{{ theme_variables.external_urls['features'] }}">Features</a>
+            <div class="ecosystem-dropdown">
+              <a id="dropdownMenuButton" data-toggle="ecosystem-dropdown">
+                Ecosystem
+              </a>
+              <div class="ecosystem-dropdown-menu">
+                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['hub'] }}"">
+                  <span class=dropdown-title>Models (Beta)</span>
+                  <p>Discover, publish, and reuse pre-trained models</p>
+                </a>
+                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['ecosystem'] }}">
+                  <span class=dropdown-title>Tools & Libraries</span>
+                  <p>Explore the ecosystem of tools and libraries</p>
+                </a>
+              </div>
+            </div>
           </li>
 
           <li>
-            <a href="{{ theme_variables.external_urls['ecosystem'] }}">Ecosystem</a>
+            <a href="{{ theme_variables.external_urls['mobile'] }}">Mobile</a>
           </li>
 
           <li>
@@ -116,7 +132,21 @@
           </li>
 
           <li>
-            <a href="{{ theme_variables.external_urls['resources'] }}">Resources</a>
+            <div class="resources-dropdown">
+              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['resources'] }}"">
+                  <span class=dropdown-title>Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['features'] }}">
+                  <span class=dropdown-title>About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+              </div>
+            </div>
           </li>
 
           <li>
@@ -289,6 +319,7 @@
 
   <script type="text/javascript" src="{{ pathto('_static/js/vendor/popper.min.js', 1) }}"></script>
   <script type="text/javascript" src="{{ pathto('_static/js/vendor/bootstrap.min.js', 1) }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
   <script type="text/javascript">
@@ -339,25 +370,24 @@
             <li><a href="{{ theme_variables.external_urls['features'] }}">Features</a></li>
             <li><a href="{{ theme_variables.external_urls['ecosystem'] }}">Ecosystem</a></li>
             <li><a href="{{ theme_variables.external_urls['blog'] }}">Blog</a></li>
-            <li><a href="{{ theme_variables.external_urls['resources'] }}">Resources</a></li>
+            <li><a href="{{ theme_variables.external_urls['contributing'] }}">Contributing</a></li>
           </ul>
         </div>
 
         <div class="footer-links-col">
           <ul>
-            <li class="list-title"><a href="{{ theme_variables.external_urls['support'] }}">Support</a></li>
+            <li class="list-title"><a href="{{ theme_variables.external_urls['resources'] }}">Resources</a></li>
             <li><a href="{{ theme_variables.external_urls['tutorials'] }}">Tutorials</a></li>
             <li><a href="{{ theme_variables.external_urls['docs'] }}">Docs</a></li>
             <li><a href="{{ theme_variables.external_urls['discuss'] }}" target="_blank">Discuss</a></li>
             <li><a href="{{ theme_variables.external_urls['github_issues'] }}" target="_blank">Github Issues</a></li>
-            <li><a href="{{ theme_variables.external_urls['slack'] }}" target="_blank">Slack</a></li>
-            <li><a href="{{ theme_variables.external_urls['contributing'] }}" target="_blank">Contributing</a></li>
+            <li><a href="{{ theme_variables.external_urls['brand_guidelines'] }}" target="_blank">Brand Guidelines</a></li>
           </ul>
         </div>
 
         <div class="footer-links-col follow-us-col">
           <ul>
-            <li class="list-title">Follow Us</li>
+            <li class="list-title">Stay Connected</li>
             <li>
               <div id="mc_embed_signup">
                 <form
@@ -394,6 +424,7 @@
           <div class="footer-social-icons">
             <a href="{{ theme_variables.external_urls['facebook'] }}" target="_blank" class="facebook"></a>
             <a href="{{ theme_variables.external_urls['twitter'] }}" target="_blank" class="twitter"></a>
+            <a href="{{ theme_variables.external_urls['youtube'] }}" target="_blank" class="youtube"></a>
           </div>
         </div>
       </div>
@@ -420,15 +451,23 @@
       <div class="main-menu">
         <ul>
           <li>
-            <a href="#">Get Started</a>
+            <a href="{{ theme_variables.external_urls['get_started'] }}">Get Started</a>
           </li>
 
           <li>
-            <a href="#">Features</a>
+            <a href="{{ theme_variables.external_urls['features'] }}">Features</a>
           </li>
 
           <li>
-            <a href="#">Ecosystem</a>
+            <a href="{{ theme_variables.external_urls['ecosystem'] }}">Ecosystem</a>
+          </li>
+
+          <li>
+            <a href="{{ theme_variables.external_urls['mobile'] }}">Mobile</a>
+          </li>
+
+          <li>
+            <a href="{{ theme_variables.external_urls['hub'] }}">PyTorch Hub</a>
           </li>
 
           <li>
@@ -467,6 +506,8 @@
       sideMenus.bind();
       scrollToAnchor.bind();
       highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
 
       // Add class to links that have code blocks, since we cannot create links in code blocks
       $("article.pytorch-article a span.pre").each(function(e) {
