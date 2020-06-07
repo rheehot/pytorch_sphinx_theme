@@ -1,3 +1,11 @@
+.navbar {
+  background-color: rgba(55, 55, 55, 0.8);
+
+  .nav-link {
+    color: white;
+  }
+}
+
 .pytorch-container {
   margin: 0 auto;
   padding: 0 rem(30px);
