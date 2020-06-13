@@ -23,8 +23,8 @@
   }
 
   ul li {
-    font-size: rem(18px);
-    line-height: rem(32px);
+    font-size: rem(14px);
+    line-height: rem(28px);
     color: #A0A0A1;
     padding-bottom: rem(6px);
 
@@ -61,11 +61,11 @@
 
   p {
     color: #929292;
-    font-size: rem(18px);
+    font-size: rem(14px);
   }
 
   h2 {
-    font-size: rem(24px);
+    font-size: rem(20px);
     letter-spacing: -0.25px;
     text-transform: none;
     margin-bottom: 0.25rem;
@@ -91,8 +91,8 @@
   }
 
   p {
-    font-size: rem(16px);
-    line-height: rem(24px);
+    font-size: rem(14px);
+    line-height: rem(20px);
     letter-spacing: 0.22px;
     color: #939393;
     margin-bottom: 0;
@@ -103,7 +103,7 @@
   }
 
   a {
-    font-size: rem(18px);
+    font-size: rem(15px);
     color: $orange;
     &:hover {
       color: $white;
@@ -124,21 +124,20 @@
 }
 
 .footer-logo {
-  background-image: url("../images/logo-icon.svg");
+  background-image: url("../images/logo-kr.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 20px 24px;
+  background-size: 260px 28px;
   display: block;
-  height: 24px;
+  height: 28px;
   margin-bottom: rem(45px);
-  width: 20px;
+  width: 260px;
 
   @include desktop {
-    background-size: 29px 36px;
-    height: 36px;
+    background-size: 260px 28px;
+    height: 28px;
     margin-bottom: 0;
-    margin-bottom: 0;
-    width: 29px;
+    width: 260px;
   }
 }
 
@@ -158,11 +157,10 @@
 
   @include desktop {
     margin-bottom: 0;
-    width: 14%;
+    width: 18%;
     margin-right: 23px;
 
-    &.follow-us-col {
-      width: 18%;
+    &:last-child {
       margin-right: 0;
     }
   }
