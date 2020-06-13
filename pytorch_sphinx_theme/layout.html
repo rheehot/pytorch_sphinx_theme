@@ -82,87 +82,30 @@
   {% include "fonts.html" %}
 </head>
 
-<a class="github-ribbon" href="https://github.com/9bow/PyTorch-tutorials-kr">
-  <img class="ribbon-img" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
-</a>
-
-<div class="container-fluid header-holder tutorials-header" id="header-holder">
-  <div class="container">
-    <div class="header-container">
-      <a class="header-logo" href="{{ theme_variables.external_urls['home'] }}" aria-label="PyTorch"></a>
-
-      <div class="main-menu">
-        <ul>
-          <li>
-            <a href="{{ theme_variables.external_urls['get_started'] }}">Get Started</a>
+<body class="pytorch-body">
+  <nav class="navbar sticky-top navbar-dark fixed-top navbar-expand-lg" style="background: rgba(55,55,55,.8)">
+    <div class="container-fluid">
+      <div class="navbar-brand">
+        <a href="{{ theme_variables.external_urls['home'] }}" aria-label="PyTorch">
+          <img src="{{ pathto('_static/images/logo-kr.svg', 1) }}" width="260" height="28" fill="white" />
+        </a>
+      </div>
+      <button type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed" aria-expanded="false" aria-controls="nav-collapse"><span class="navbar-toggler-icon"></span></button>
+      <div id="nav-collapse" class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="//pytorch.kr/" target="_self" class="nav-link">홈</a></li>
+          <li class="nav-item">
+            <a href="//tutorials.pytorch.kr/" target="_self" class="nav-link">튜토리얼</a>
           </li>
-
-          <li>
-            <div class="ecosystem-dropdown">
-              <a id="dropdownMenuButton" data-toggle="ecosystem-dropdown">
-                Ecosystem
-              </a>
-              <div class="ecosystem-dropdown-menu">
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['hub'] }}"">
-                  <span class=dropdown-title>Models (Beta)</span>
-                  <p>Discover, publish, and reuse pre-trained models</p>
-                </a>
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['ecosystem'] }}">
-                  <span class=dropdown-title>Tools & Libraries</span>
-                  <p>Explore the ecosystem of tools and libraries</p>
-                </a>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <a href="{{ theme_variables.external_urls['mobile'] }}">Mobile</a>
-          </li>
-
-          <li>
-            <a href="{{ theme_variables.external_urls['blog'] }}">Blog</a>
-          </li>
-
-          <li {%- if theme_pytorch_project == 'tutorials' %} class="active"{% endif %}>
-            <a href="{{ theme_variables.external_urls['tutorials'] }}">Tutorials</a>
-          </li>
-
-          <li {%- if theme_pytorch_project == 'docs' %} class="active"{% endif %}>
-            <a href="{{ theme_variables.external_urls['docs'] }}">Docs</a>
-          </li>
-
-          <li>
-            <div class="resources-dropdown">
-              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
-                Resources
-              </a>
-              <div class="resources-dropdown-menu">
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['resources'] }}"">
-                  <span class=dropdown-title>Developer Resources</span>
-                  <p>Find resources and get questions answered</p>
-                </a>
-                <a class="nav-dropdown-item" href="{{ theme_variables.external_urls['features'] }}">
-                  <span class=dropdown-title>About</span>
-                  <p>Learn about PyTorch’s features and capabilities</p>
-                </a>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <a href="{{ theme_variables.external_urls['github'] }}">Github</a>
-          </li>
+          <li class="nav-item">
+            <a href="//pytorch.kr/about" target="_self" class="nav-link">
+              소개
+            </a></li>
         </ul>
       </div>
-
-      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
     </div>
-
-  </div>
-</div>
-
-
-<body class="pytorch-body">
+  </nav>
 
   {% block extrabody %} {% endblock %}
 
