@@ -158,11 +158,10 @@
 
   @include desktop {
     margin-bottom: 0;
-    width: 14%;
+    width: 18%;
     margin-right: 23px;
 
-    &.follow-us-col {
-      width: 18%;
+    &:last-child {
       margin-right: 0;
     }
   }
